@@ -90,7 +90,7 @@ def get_conversational_chain(modelname):
 
 def clear_chat_history():
     st.session_state.messages = [
-        {"role": "assistant", "content": "upload some pdfs and ask me a question"}]
+        {"role": "assistant", "content": "Please upload some pdf,docx,txt files and ask me a question"}]
 
 
 def user_input(user_question,modelname):
@@ -160,7 +160,7 @@ def main():
 
     if "messages" not in st.session_state.keys():
         st.session_state.messages = [
-            {"role": "assistant", "content": "Upload some pdf,docx,txt and ask me a question"}]
+            {"role": "assistant", "content": "Please upload some pdf,docx,txt files and ask me a question"}]
 
     for message in st.session_state.messages:
         with st.chat_message(message["role"]):
