@@ -90,7 +90,7 @@ def get_conversational_chain(modelname):
 
 def clear_chat_history():
     st.session_state.messages = [
-        {"role": "assistant", "content": "Please upload some pdf,docx,txt files and ask me a question"}]
+        {"role": "assistant", "content": "upload some pdfs,docx,txt files and ask me a question"}]
 
 
 def user_input(user_question,modelname):
@@ -160,7 +160,7 @@ def main():
 
     if "messages" not in st.session_state.keys():
         st.session_state.messages = [
-            {"role": "assistant", "content": "Please upload some pdf,docx,txt files and ask me a question"}]
+            {"role": "assistant", "content": "Upload some pdf,docx,txt and ask me a question"}]
 
     for message in st.session_state.messages:
         with st.chat_message(message["role"]):
@@ -185,13 +185,13 @@ def main():
         if response is not None:
             message = {"role": "assistant", "content": full_response}
             st.session_state.messages.append(message)
+
+    # Footer
+    st.markdown('<hr style="margin-top:2em; margin-bottom:0.5em;">', unsafe_allow_html=True)
+    st.markdown('<div style="text-align:center; color: #888; font-size: 1.1em;">Made with ❤️ by Pramod Lal .</div>', unsafe_allow_html=True)
 if __name__ == "__main__":
      try:
         main()
      except Exception as e:
         # Manage Errors: Other Exceptions
         st.error(f"An error occurred: {e}")   
-# Footer
-st.markdown('<hr style="margin-top: 2em; margin-bottom: 0.5em;">', unsafe_allow_html=True)
-st.markdown('<div style="text-align:center; color: #888; font-size: 1.1em;">Made with ❤️ by Pramod Lal</div>', unsafe_allow_html=True)
-
