@@ -191,3 +191,7 @@ if __name__ == "__main__":
      except Exception as e:
         # Manage Errors: Other Exceptions
         st.error(f"An error occurred: {e}")   
+# Footer
+st.markdown('<hr style="margin-top: 2em; margin-bottom: 0.5em;">', unsafe_allow_html=True)
+st.markdown('<div style="text-align:center; color: #888; font-size: 1.1em;">Made with ❤️ by Pramod Lal</div>', unsafe_allow_html=True)
+
